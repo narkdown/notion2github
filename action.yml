@@ -1,0 +1,93 @@
+name: 'Notion2Github'
+author: Younho Choo
+description: 'Automatic syncronization from Notion to Github'
+branding:
+  icon: github
+  color: black
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+inputs:
+  database-url:
+    description: ''
+    required: true
+
+  # export config
+  docs-directory:
+    description: ''
+    required: false
+  recursive-export:
+    description: ''
+    required: false
+  create-page-directory:
+    description: ''
+    required: false
+  add-metadata:
+    description: ''
+    required: false
+  lower-pathname:
+    description: ''
+    required: false
+  lower-filename:
+    description: ''
+    required: false
+  line-break:
+    description: ''
+    required: false
+
+  # database-config
+  category-column-name:
+    description: ''
+    required: false
+  tags-column-name:
+    description: ''
+    required: false
+  created-time-column-name:
+    description: ''
+    required: false
+  status-column-name:
+    description: ''
+    required: false
+  current-status:
+    description: ''
+    required: false
+  next-status:
+    description: ''
+    required: false
+  filters:
+    description: ''
+    required: false
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.database-url }}
+    - --docs-directory
+    - "${{ inputs.docs-directory }}"
+    - --recursive-export
+    - "${{ inputs.recursive-export }}"
+    - --create-page-directory
+    - "${{ inputs.create-page-directory }}"
+    - --add-metadata
+    - "${{ inputs.add-metadata }}"
+    - --lower-pathname
+    - "${{ inputs.lower-pathname }}"
+    - --lower-filename
+    - "${{ inputs.lower-filename }}"
+    - --line-break
+    - "${{ inputs.line-break }}"
+    - --category-column-name
+    - "${{ inputs.category-column-name }}"
+    - --tags-column-name
+    - "${{ inputs.tags-column-name }}"
+    - --created-time-column-name
+    - "${{ inputs.created-time-column-name }}"
+    - --status-column-name
+    - "${{ inputs.status-column-name }}"
+    - --current-status
+    - "${{ inputs.current-status }}"
+    - --next-status
+    - "${{ inputs.next-status }}"
+    - --filters
+    - "${{ inputs.filters }}"
