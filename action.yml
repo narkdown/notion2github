@@ -16,21 +16,27 @@ inputs:
   recursive-export:
     description: Whether or not to recursively export child page.
     required: false
+    default: true
   create-page-directory:
     description: Whether or not to create subdirectory with page title.
     required: false
+    default: true
   add-metadata:
     description: Whether or not to add metadata to content.
     required: false
+    default: false
   lower-pathname:
     description: Whether or not to make pathname to lowercase.
     required: false
+    default: false
   lower-filename:
     description: Whether or not to make pathname to uppercase.
     required: false
+    default: false
   line-break:
     description: Whether or not to convert empty blocks of notion to line break tag(<br />).
     required: false
+    default: false
 
   # database-config
   category-column-name:
