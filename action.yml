@@ -1,63 +1,75 @@
-name: 'Notion2Github'
+name: Notion2Github
 author: Younho Choo
-description: 'Automatic syncronization from Notion to Github'
+description: Automatic syncronization from Notion to Github
 branding:
   icon: inbox
   color: black
 inputs:
   database-url:
-    description: ''
+    description: URL of the notion database to extract.
     required: true
 
   # export config
   docs-directory:
-    description: ''
+    description: Directory in which the notion page to extract will be stored.
     required: false
   recursive-export:
-    description: ''
+    description: Whether or not to recursively export child page.
     required: false
   create-page-directory:
-    description: ''
+    description: Whether or not to create subdirectory with page title.
     required: false
   add-metadata:
-    description: ''
+    description: Whether or not to add metadata to content.
     required: false
   lower-pathname:
-    description: ''
+    description: Whether or not to make pathname to lowercase.
     required: false
   lower-filename:
-    description: ''
+    description: Whether or not to make pathname to uppercase.
     required: false
   line-break:
-    description: ''
+    description: Whether or not to convert empty blocks of notion to line break tag(<br />).
     required: false
 
   # database-config
   category-column-name:
-    description: ''
+    description: >
+      In the Notion database, you can categorize content by category with "Select" property.
+      If you create a "Select" property in the Notion database and pass the name of the column,
+      then folders will be created by category.
     required: false
   tags-column-name:
-    description: ''
+    description: >
+      In the Notion database, you can tag content with "Multi Select" property. (should set add_metadata to True.)
+      If you create a "Multi Select" property in the Notion database and pass the name of the column,
+      then meta data will be insterted to contents.
     required: false
   created-time-column-name:
-    description: ''
+    description: >
+      In the Notion database, you can manage created time of content with "Created Time" property.
+      If you create a "Created Time" property in the Notion database and pass the name of the column,
+      you can add created time to filename.
     required: false
   status-column-name:
-    description: ''
+    description: >
+      In the Notion database, you can manage the status of content with "Select" property.
+      If you create a "Select" property in the Notion database and pass the name of the column,
+      you can import contents in a specific state or change the status of the content.
     required: false
   current-status:
-    description: ''
+    description: Status of content to import. Must be an option in the "status_column_name" column.
     required: false
   next-status:
-    description: ''
+    description: Status of contents after content was imported. Must be an option in the "status_column_name" column.
     required: false
   filters:
-    description: ''
+    description: Key, value pair of filter list to apply to the Notion database.
     required: false
 
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
+  using: "docker"
+  image: "Dockerfile"
   args:
     - ${{ inputs.database-url }}
     - --docs-directory
