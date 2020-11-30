@@ -2,7 +2,7 @@ name: 'Notion2Github'
 author: Younho Choo
 description: 'Automatic syncronization from Notion to Github'
 branding:
-  icon: github
+  icon: inbox
   color: black
 runs:
   using: 'docker'
