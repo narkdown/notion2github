@@ -4,9 +4,6 @@ description: 'Automatic syncronization from Notion to Github'
 branding:
   icon: inbox
   color: black
-runs:
-  using: 'docker'
-  image: 'Dockerfile'
 inputs:
   database-url:
     description: ''
