@@ -1,6 +1,6 @@
 {
   "exportConfig": {
-    "docsDirectory": "./test/v0.0.4/",
+    "docsDirectory": "./docs/v1.2.1/",
     "recursiveExport": true,
     "createPageDirectory": true,
     "addMetadata": false,
@@ -15,8 +15,6 @@
     "statusColumnName": "Status",
     "currentStatus": "✅ Completed",
     "nextStatus": "🖨 Published",
-    "filters": {
-      "Category": "Test"
-    }
+    "filters": {}
   }
 }
