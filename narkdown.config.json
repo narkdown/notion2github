@@ -1,0 +1,20 @@
+{
+  "exportConfig": {
+    "docsDirectory": "./docs/v1.2.1/",
+    "recursiveExport": true,
+    "createPageDirectory": true,
+    "addMetadata": false,
+    "lowerPathname": true,
+    "lowerFilename": true,
+    "lineBreak": false
+  },
+  "databaseConfig": {
+    "categoryColumnName": "Category",
+    "tagsColumnName": "Tags",
+    "createdTimeColumnName": "Created Time",
+    "statusColumnName": "Status",
+    "currentStatus": "✅ Completed",
+    "nextStatus": "🖨 Published",
+    "filters": {}
+  }
+}
