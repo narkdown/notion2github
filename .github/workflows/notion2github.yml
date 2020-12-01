@@ -10,7 +10,7 @@ jobs:
       - name: Notion2Github
         uses: ./
         with:
-          database-url: "https://www.notion.so/younho9/acc3dfd0339e4cacb5baae8673fddfad?v=83b3d2a66f634940987d1142e51da175"
+          database-url: "https://www.notion.so/acc3dfd0339e4cacb5baae8673fddfad"
         env:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
 
