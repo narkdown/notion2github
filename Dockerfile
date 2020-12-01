@@ -8,7 +8,7 @@ LABEL "maintainer"="Younho Choo <younho9.choo@gmail.com>"
 WORKDIR /usr/src/app
 
 COPY requirements.txt main.py ./
-COPY /github/workspace/narkdown.config.json ./narkdown.config.json
+COPY $GITHUB_WORKSPACE/narkdown.config.json ./narkdown.config.json
 RUN ls
 
 RUN ls
