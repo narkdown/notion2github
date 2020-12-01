@@ -1,0 +1,23 @@
+name: Notion2Github
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Notion2Github
+        uses: ./
+        with:
+          database-url: "https://www.notion.so/younho9/acc3dfd0339e4cacb5baae8673fddfad?v=83b3d2a66f634940987d1142e51da175"
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+
+      - name: Prettify code
+        uses: creyD/prettier_action@v3.1
+        with:
+          prettier_options: --write ./docs/**/*.md
+          commit_message: "docs: Update docs (auto)"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
