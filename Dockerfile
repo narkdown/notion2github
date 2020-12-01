@@ -7,7 +7,10 @@ LABEL "maintainer"="Younho Choo <younho9.choo@gmail.com>"
 
 WORKDIR /usr/src/app
 
-COPY requirements.txt main.py narkdown.config.json ./
+COPY requirements.txt main.py ./
+COPY /github/workspace/narkdown.config.json ./narkdown.config.json
+RUN ls
+
 RUN ls
 
 RUN pip install -r requirements.txt
