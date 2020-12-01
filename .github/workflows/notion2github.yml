@@ -1,7 +1,7 @@
 name: Notion2Github
 on: [push]
 jobs:
-  build:
+  automatic-syncronization-from-notion-to-github:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -14,7 +14,7 @@ jobs:
         env:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
 
-      - name: Prettify code
+      - name: Format documents
         uses: creyD/prettier_action@v3.1
         with:
           prettier_options: --write ./docs/**/*.md
