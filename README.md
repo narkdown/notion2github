@@ -4,7 +4,7 @@
 
 [![GitHub Action: View on Marketplace](https://img.shields.io/badge/GitHub%20Action-View_on_Marketplace-blue?style=flat-square&logo=github)](https://github.com/marketplace/actions/notion2github)
 [![Demo: available](https://img.shields.io/badge/Demo-available-orange?style=flat-square)](.github/workflows/notion2github.yml)
-[![Version: v1.0.1](https://img.shields.io/badge/Version-v1.0.1-brightgreen?style=flat-square)](https://github.com/younho9/narkdown/releases/tag/v1.0.1)
+[![Version: v1.0.1](https://img.shields.io/badge/Version-v1.0.1-brightgreen?style=flat-square)](https://github.com/younho9/notion2github/releases/tag/v1.0.1)
 [![license: MIT](https://img.shields.io/badge/license-MIT-yellow.svg?style=flat-square)](./LICENSE)
 
 **Automatic syncronization from Notion to Github**
