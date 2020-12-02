@@ -14,8 +14,8 @@ jobs:
         with:
           database-url: 'https://www.notion.so/acc3dfd0339e4cacb5baae8673fddfad'
           docs-directory: docs
-          filter-prop: ✅ Completed
-          filter-value: 🖨 Published
+          # filter-prop: Category
+          # filter-value: Test
         env:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
 
