@@ -4,7 +4,7 @@
 
 [![GitHub Action: View on Marketplace](https://img.shields.io/badge/GitHub%20Action-View_on_Marketplace-blue?style=flat-square&logo=github)](https://github.com/marketplace/actions/notion2github)
 [![Demo: available](https://img.shields.io/badge/Demo-available-orange?style=flat-square)](.github/workflows/notion2github.yml)
-[![Version: v1.0.0-beta](https://img.shields.io/badge/Version-v1.0.0--beta-brightgreen?style=flat-square)](https://github.com/younho9/narkdown/releases/tag/v1.0.0-beta)
+[![Version: v1.0.1](https://img.shields.io/badge/Version-v1.0.1-brightgreen?style=flat-square)](https://github.com/younho9/narkdown/releases/tag/v1.0.1)
 [![license: MIT](https://img.shields.io/badge/license-MIT-yellow.svg?style=flat-square)](./LICENSE)
 
 **Automatic syncronization from Notion to Github**
@@ -66,7 +66,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Notion2Github
-        uses: younho9/notion2github@v1.0.0-beta
+        uses: younho9/notion2github@v1
         with:
           database-url: 'https://www.notion.so/acc3dfd0339e4cacb5baae8673fddfad'
           docs-directory: docs/test
@@ -99,7 +99,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Notion2Github
-        uses: younho9/notion2github@v1.0.0-beta
+        uses: younho9/notion2github@v1
         with:
           database-url: 'https://www.notion.so/acc3dfd0339e4cacb5baae8673fddfad'
           docs-directory: docs/test
