@@ -28,6 +28,8 @@ The `token_v2` is required to get contents from Notion. The `token_v2` of notion
 
 For more information, See ["Using encrypted secrets in a workflow"](https://docs.github.com/en/free-pro-team@latest/actions/reference/encrypted-secrets#using-encrypted-secrets-in-a-workflow)
 
+### Parameters
+
 | Name             | Description                                                    | Required   | Default  |
 | ---------------- | -------------------------------------------------------------- | ---------- | -------- |
 | `database-url`   | URL of the Notion database to extract.                         | `required` |          |
