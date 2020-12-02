@@ -1,7 +1,8 @@
 name: Notion2Github
 on:
-  schedule:
-    - cron: '0 14 * * *'
+  push:
+    branches:
+      - 'test/**'
 jobs:
   auto-sync-from-notion-to-github:
     runs-on: ubuntu-latest
@@ -13,7 +14,7 @@ jobs:
         uses: ./
         with:
           database-url: 'https://www.notion.so/acc3dfd0339e4cacb5baae8673fddfad'
-          docs-directory: docs
+          docs-directory: docs/${GITHUB_REF##*/}
           # filter-prop: Category
           # filter-value: Test
         env:
