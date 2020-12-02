@@ -18,32 +18,21 @@
 
 ## Usage
 
-### Using encrypted token_v2 in a workflow
+### Quick Start
 
-<div align="center">
-  <img width="80%" src="docs/images/readme-image-0.png" alt="notion2github-image-0">
-</div>
+1. Go to `github.com/{your_id}/{your_repo}/settings/secrets/actions`
 
-The `token_v2` is required to get contents from Notion. The `token_v2` of notion is a variable that should not be shared. So you can use encrypted secrets in your repository.
+2. Set `token_v2` of Notion to your repository secret.
 
-For more information, See ["Using encrypted secrets in a workflow"](https://docs.github.com/en/free-pro-team@latest/actions/reference/encrypted-secrets#using-encrypted-secrets-in-a-workflow)
+   ![notion2github-image-0](docs/images/readme-image-0.png)
 
-### Parameters
+   [How To Find Your Notion v2 Token - Red Gregory](https://www.redgregory.com/notion/2020/6/15/9zuzav95gwzwewdu1dspweqbv481s5)
 
-| Name             | Description                                                    | Required   | Default  |
-| ---------------- | -------------------------------------------------------------- | ---------- | -------- |
-| `database-url`   | URL of the Notion database to extract.                         | `required` |          |
-| `docs-directory` | Directory in which the Notion pages to extract will be stored. |            | `"docs"` |
-| `filter-prop`    | Property of the filter to apply to the notion database.        |            | `""`     |
-| `filter-value`   | Value of the filter to apply to the notion database.           |            | `""`     |
+   [Encrypted secrets](https://docs.github.com/en/free-pro-team@latest/actions/reference/encrypted-secrets#using-encrypted-secrets-in-a-workflow)
 
-### Database template page for test
+3. Create workflow to `.github/workflows/**.yml`
 
-Here is an [database template page](/acc3dfd0339e4cacb5baae8673fddfad?v=be43c1c8dd644cfb9df9efd97d8af60a) for importing pages from the database. Move to that page, duplicate it, and test it.
-
-<div align="center">
-  <img width="80%" src="docs/images/readme-image-1.png" alt="notion2github-image-1">
-</div>
+Here is examples.
 
 ### Example Workflow
 
@@ -125,7 +114,26 @@ jobs:
 
 - [younho9/TIL](https://github.com/younho9/til/blob/main/.github/workflows/notion2github.yml)
 
-## Configuring Narkdown
+## Database template page for test
+
+Here is an [database template page](/acc3dfd0339e4cacb5baae8673fddfad?v=be43c1c8dd644cfb9df9efd97d8af60a) for importing pages from the database. Move to that page, duplicate it, and test it.
+
+<div align="center">
+  <img width="80%" src="docs/images/readme-image-1.png" alt="notion2github-image-1">
+</div>
+
+## Configuration
+
+### Parameters
+
+| Name             | Description                                                    | Required   | Default  |
+| ---------------- | -------------------------------------------------------------- | ---------- | -------- |
+| `database-url`   | URL of the Notion database to extract.                         | `required` |          |
+| `docs-directory` | Directory in which the Notion pages to extract will be stored. |            | `"docs"` |
+| `filter-prop`    | Property of the filter to apply to the notion database.        |            | `""`     |
+| `filter-value`   | Value of the filter to apply to the notion database.           |            | `""`     |
+
+### Configuring Narkdown
 
 Narkdown provides some configuration for how to extract documents. You can configure Narkdown via `narkdown.config.json` .
 
@@ -154,6 +162,12 @@ For more information on configure your environment, [see the document in Nakdown
   }
 }
 ```
+
+### Used in combination with other actions
+
+Notion2Github is a step in the workflow, just import the contents of notion to a running virtual machine in github action.
+
+There are great actions to commit the imported content to your repository.
 
 ### License
 
