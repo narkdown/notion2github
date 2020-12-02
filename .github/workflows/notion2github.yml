@@ -14,7 +14,7 @@ jobs:
         uses: ./
         with:
           database-url: 'https://www.notion.so/acc3dfd0339e4cacb5baae8673fddfad'
-          docs-directory: docs/${GITHUB_REF##*/}
+          docs-directory: docs/$GITHUB_REF
           # filter-prop: Category
           # filter-value: Test
         env:
