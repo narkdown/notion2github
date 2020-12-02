@@ -3,7 +3,7 @@ on:
   schedule:
     - cron: '0 14 * * *'
 jobs:
-  automatic-syncronization-from-notion-to-github:
+  auto-sync-from-notion-to-github:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
