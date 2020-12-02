@@ -8,11 +8,29 @@ inputs:
   database-url:
     description: URL of the notion database to extract.
     required: true
+  docs-directory:
+    description: Directory in which the notion pages to extract will be stored.
+    required: false
+    default: 'docs'
+  filter-prop:
+    description: Property of the filter to apply to the notion database.
+    required: false
+    default: ''
+  filter-value:
+    description: Value of the filter to apply to the notion database.
+    required: false
+    default: ''
 
 runs:
-  using: "docker"
-  image: "Dockerfile"
+  using: 'docker'
+  image: 'Dockerfile'
   args:
     - --url
     - ${{ inputs.database-url }}
+    - --docs-directory
+    - ${{ inputs.docs-directory }}
+    - --filter-prop
+    - ${{ inputs.filter-prop }}
+    - --filter-value
+    - ${{ inputs.filter-value }}
     - --is-database
