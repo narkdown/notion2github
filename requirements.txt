@@ -1,1 +1,1 @@
-narkdown==1.2.4
+narkdown==1.2.5
