@@ -1,4 +1,4 @@
-<a align="left" href="https://www.notion.so/Notion2Github-91cf062b276b41cdb78a75672ba31cb3"><img src="docs/images/logo.png" alt="Notion2Github" width="120px"></a>
+<a align="left" href="https://www.notion.so/Notion2Github-ko-c6842704d6e9473386cd1ab3662c1191"><img src="images/logo.png" alt="Notion2Github" width="120px"></a>
 
 # Notion2Github
 
@@ -9,36 +9,35 @@
 
 | [English](/README.md) | [한국어](/docs/README.ko.md) |
 
-**Automatic syncronization from Notion to Github**
+**노션에서 깃헙으로의 자동 동기화**
 
 ---
 
-> ⚠️ **NOTE:** Narkdown is dependent on [notion-py](https://github.com/jamalex/notion-py), the **_unofficial_** Notion API created by [Jamie Alexandre](https://github.com/jamalex).
-> It can not gurantee it will stay stable. If you need to use in production, I recommend waiting for their official release.
+> ⚠️ **유의사항:** Notion2Github은 [Jamie Alexandre](https://github.com/jamalex)이 만든 **_비공식_** 노션 API인 [notion-py](https://github.com/jamalex/notion-py) 프로젝트에 의존하고 있습니다. 공식 API가 아니기 때문에 안정적이지 않을 수 있습니다. 프로덕션 환경에서 사용하고자 한다면, 노션 공식 API 출시를 기다리는 것을 권장합니다.
 
 ---
 
-## Usage
+## 사용법
 
-### Quick Start
+### 바로 시작하기
 
-1. Go to `github.com/{your_id}/{your_repo}/settings/secrets/actions`
+1. `github.com/{your_id}/{your_repo}/settings/secrets/actions` 으로 이동합니다.
 
-2. Set `token_v2` of Notion to your repository secret.
+1. 노션의 `token_v2` 를 레포지토리의 Secrets으로 설정합니다.
 
-   ![notion2github-image-0](docs/images/readme-image-0.png)
+   ![notion2github-image-0](images/readme-image-0.png)
 
    [How To Find Your Notion v2 Token - Red Gregory](https://www.redgregory.com/notion/2020/6/15/9zuzav95gwzwewdu1dspweqbv481s5)
 
    [Encrypted secrets](https://docs.github.com/en/free-pro-team@latest/actions/reference/encrypted-secrets#using-encrypted-secrets-in-a-workflow)
 
-3. Create a workflow in `.github/workflows/**.yml` of your repository
+1. 레포지토리의 `.github/workflows/**.yml` 파일에 워크플로우를 생성합니다.
 
-Here are examples.
+몇 가지 예시입니다.
 
-### Example Workflow
+### 워크플로우 예제
 
-#### Example 1 (run on push & pull request in main)
+#### 예제 1 (main 브랜치에 push & pull request 시에 실행)
 
 ```yaml
 name: Notion2Github
@@ -71,7 +70,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 
-#### Example 2 (scheduled)
+#### 예제 2 (정해진 시간에 실행)
 
 ```yaml
 name: Notion2Github
@@ -102,40 +101,40 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 
-> [Useful site for crontab setting](https://crontab.guru/)
+> [크론탭 설정에 유용한 사이트](https://crontab.guru/)
 
-### Live examples
+### 실사용 예제
 
 - [younho9/narkdown](https://github.com/younho9/narkdown/blob/main/.github/workflows/notion2github.yml)
 
 - [younho9/TIL](https://github.com/younho9/til/blob/main/.github/workflows/notion2github.yml)
 
-## Database template page for test
+## 테스트를 위한 데이터베이스 템플릿 페이지
 
-Here is an [database template page](https://www.notion.so/acc3dfd0339e4cacb5baae8673fddfad?v=be43c1c8dd644cfb9df9efd97d8af60a) for importing pages from the database. Move to that page, duplicate it, and test it.
+데이터베이스로부터 페이지들을 가져올 수 있는 [데이터베이스 템플릿 페이지](https://www.notion.so/acc3dfd0339e4cacb5baae8673fddfad?v=be43c1c8dd644cfb9df9efd97d8af60a)가 있습니다.
+
+페이지로 이동해서 복제하고 테스트해볼 수 있습니다.
 
 <div align="center">
-  <img width="80%" src="docs/images/readme-image-1.png" alt="notion2github-image-1">
+  <img width="80%" src="images/readme-image-1.png" alt="notion2github-image-1">
 </div>
 
-## Configuration
+## 환경설정
 
-### Parameters
+| Name             | Description                                 | Required   | Default  |
+| ---------------- | ------------------------------------------- | ---------- | -------- |
+| `database-url`   | 추출할 노션 데이터베이스의 URL              | `required` |          |
+| `docs-directory` | 추출된 노션 페이지들이 저장될 디렉토리      |            | `"docs"` |
+| `filter-prop`    | 노션 데이터베이스에 적용할 필터의 속성 이름 |            | `""`     |
+| `filter-value`   | 노션 데이터베이스에 적용할 필터의 값 이름   |            | `""`     |
 
-| Name             | Description                                                    | Required   | Default  |
-| ---------------- | -------------------------------------------------------------- | ---------- | -------- |
-| `database-url`   | URL of the Notion database to extract.                         | `required` |          |
-| `docs-directory` | Directory in which the Notion pages to extract will be stored. |            | `"docs"` |
-| `filter-prop`    | Property of the filter to apply to the notion database.        |            | `""`     |
-| `filter-value`   | Value of the filter to apply to the notion database.           |            | `""`     |
+### Narkdown 환경설정
 
-### Configuring Narkdown
+Narkdown은 문서들을 어떻게 추출할 것인지에 대해 몇가지 환경설정을 제공합니다. `narkdown.config.json` 파일을 통해서 Narkdown을 환경설정할 수 있습니다.
 
-Narkdown provides some configuration for how to extract documents. You can configure Narkdown via `narkdown.config.json` .
+레포지토리의 root에 `narkdown.config.json` 파일을 생성하세요.
 
-Create `narkdown.config.json` in root directory of your repository.
-
-For more information on configure your environment, [see the document in Nakdown](https://github.com/younho9/narkdown#configuring-narkdown).
+환경에 따라 환경설정하는 방법에 대한 더 많은 정보를 보려면 [Narkdown의 문서를 확인하세요](https://github.com/younho9/narkdown#configuring-narkdown).
 
 ```json
 // narkdown.config.json
@@ -159,11 +158,11 @@ For more information on configure your environment, [see the document in Nakdown
 }
 ```
 
-### Used in combination with other actions
+### 다른 액션과 조합하여 사용
 
-Notion2Github is a step in the workflow, just import the contents of notion to a running virtual machine in github action.
+Notion2Github은 워크플로우의 한 step으로 단지 github action으로 실행되는 가상 머신으로 노션의 콘텐츠들을 가져올 뿐입니다.
 
-There are great actions to commit the imported content to your repository.
+노션의 콘텐츠들을 레포지토리로 커밋할 수 있는 훌륭한 action들이 있습니다.
 
 - [Git Auto Commit - GitHub Marketplace](https://github.com/marketplace/actions/git-auto-commit)
 
