@@ -55,7 +55,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Notion2Github
-        uses: younho9/notion2github@v1.0.2
+        uses: younho9/notion2github@v1.1.0
         with:
           database-url: 'https://www.notion.so/acc3dfd0339e4cacb5baae8673fddfad'
           docs-directory: docs
@@ -86,7 +86,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Notion2Github
-        uses: younho9/notion2github@v1.0.2
+        uses: younho9/notion2github@v1.1.0
         with:
           database-url: 'https://www.notion.so/acc3dfd0339e4cacb5baae8673fddfad'
           docs-directory: docs
