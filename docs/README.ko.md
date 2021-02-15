@@ -142,15 +142,12 @@ Narkdown은 문서들을 어떻게 추출할 것인지에 대해 몇가지 환�
   "exportConfig": {
     "recursiveExport": true,
     "createPageDirectory": true,
-    "addMetadata": false,
-    "lowerPathname": false,
-    "lowerFilename": false,
-    "lineBreak": false
+    "addMetadata": true,
+    "appendCreatedTime": true,
+    "generateSlug": true
   },
   "databaseConfig": {
     "categoryColumnName": "Category",
-    "tagsColumnName": "Tags",
-    "createdTimeColumnName": "Created Time",
     "statusColumnName": "Status",
     "currentStatus": "✅ Completed",
     "nextStatus": "🖨 Published"

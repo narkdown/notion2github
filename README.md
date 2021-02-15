@@ -143,15 +143,12 @@ For more information on configure your environment, [see the document in Nakdown
   "exportConfig": {
     "recursiveExport": true,
     "createPageDirectory": true,
-    "addMetadata": false,
-    "lowerPathname": false,
-    "lowerFilename": false,
-    "lineBreak": false
+    "addMetadata": true,
+    "appendCreatedTime": true,
+    "generateSlug": true
   },
   "databaseConfig": {
     "categoryColumnName": "Category",
-    "tagsColumnName": "Tags",
-    "createdTimeColumnName": "Created Time",
     "statusColumnName": "Status",
     "currentStatus": "✅ Completed",
     "nextStatus": "🖨 Published"
